@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+perfil_robo/
+*.db
+.env

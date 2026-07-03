@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  # O nosso Banco de Dados
+  db:
+    image: postgres:15-alpine
+    container_name: silicon_scout_db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpassword
+      POSTGRES_DB: silicon_scout
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  # Isso garante que se o container desligar, os dados não somem
+  postgres_data:
